@@ -1,0 +1,17 @@
+version: '1.0'
+
+services:
+  fastapiPrueba:
+    restart: on-failture
+    buld: .
+    ports:
+      - "8000:8000"
+    links:
+      - monguito
+  monguito:
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=kebyn
+      - MONGO_INITDB_ROOT_PASSWORD=root
